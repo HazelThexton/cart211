@@ -1,0 +1,47 @@
+/*********************************************
+
+CSS.
+
+**********************************************/
+
+/* General syling */
+p {
+  font-size:20px;
+  color:black;
+}
+
+h1 {
+  font-size:40px;
+  color:blue;
+}
+
+.p1 {
+  border: 5px;
+  border-style: solid;
+  width:60%;
+  margin-bottom: 10px;
+  margin: auto;
+  padding: 5px;
+}
+
+.p2 {
+  border: 10px;
+  font-family: arial;
+  border-style: solid;
+  border-color: blue;
+  width:60%;
+  float: left;
+  padding: 5px;
+  margin:10px;
+}
+
+.p3 {
+  border: 10px;
+  font-family: verdana;
+  border-style: solid;
+  border-color: red;
+  width:60%;
+  float: right;
+  padding: 5px;
+  margin:10px;
+}
