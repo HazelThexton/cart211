@@ -23,7 +23,10 @@ function rate() {
   else if (rating>4){
     document.getElementById("response").innerHTML= rating + "? Well, that's okay, but not great.";
   }
-  else {
+  else if (rating<=4){
     document.getElementById("response").innerHTML= rating + "? That sucks, sorry to hear that.";
+  }
+  else {
+    document.getElementById("response").innerHTML= rating + "? What is that supposed to mean??";
   }
 }
