@@ -69,8 +69,8 @@ footer {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  margin-left: 20%;
-  margin-right: 20%;
+  margin-left: 15%;
+  margin-right: 15%;
 
 }
 
@@ -79,7 +79,7 @@ footer {
   margin: 10px;
   background-color: black;
   color: white;
-  font-size: 40px;
+  font-size: 38px;
   line-height: 100px;
   text-decoration: none;
   border-style: dotted;
