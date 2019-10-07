@@ -118,6 +118,18 @@ footer {
 
 }
 
+.note1 a {
+  padding: 10px;
+  text-decoration: none;
+  color: black;
+}
+
+.note1 a:hover, .note2 a:hover, .note3 a:hover, .note4 a:hover {
+
+  border-style: dotted;
+  border-color: black;
+}
+
 /* Styling for the About page */
 
 .about {
