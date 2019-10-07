@@ -118,7 +118,7 @@ footer {
 
 }
 
-.note1 a {
+.note1 a, .note2 a, .note3 a, .note4 a {
   padding: 10px;
   text-decoration: none;
   color: black;
