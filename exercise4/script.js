@@ -26,6 +26,7 @@ function rate() {
   else if (rating<=4){
     document.getElementById("response").innerHTML= rating + "? That sucks, sorry to hear that.";
   }
+  // if the input is not a number
   else {
     document.getElementById("response").innerHTML= rating + "? What is that supposed to mean??";
   }
