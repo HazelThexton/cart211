@@ -19,6 +19,7 @@ h2 {
 }
 
 body {
+  max-width: 80%;
   text-align:center;
   margin: auto;
   font-family: "Lucida Console";
@@ -33,16 +34,67 @@ p {
 .header a {
   padding: 10px;
   text-decoration: none;
+  color: black;
 }
 
 .header a:hover {
 
-border-style: dotted;
-border-color: black;
+  border-style: dotted;
+  border-color: black;
 }
 
+.flex-container-header {
+  display: flex;
+  justify-content: center;
+  padding-bottom: 2%;
+  margin-bottom: 5%;
+  border-bottom: dashed;
+  border-color: black;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+footer {
+  text-align: center;
+  padding-top: 2%;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  border-top: dashed;
+  border-color: black;
+}
+
+/* Styling for the Exercises page */
+
+.flex-container-exercises {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-left: 20%;
+  margin-right: 20%;
+
+}
+
+.exercise a {
+  padding: 20px;
+  margin: 10px;
+  background-color: black;
+  color: white;
+  font-size: 40px;
+  line-height: 100px;
+  text-decoration: none;
+  border-style: dotted;
+  border-color: black;
+}
+
+.exercise a:hover {
+  background-color: white;
+  color: black;
+}
+
+/* Styling for the Notes page */
+
 .noteBody1, .noteBody2, .noteBody3, .noteBody4 {
-display: none;
+  display: none;
 }
 
 .note1, .note2, .note3, .note4 {
@@ -66,60 +118,29 @@ display: none;
 
 }
 
+/* Styling for the About page */
+
 .about {
   text-align: left;
   margin-left: 40%;
-  margin-right: 8%;
-line-height: 30px;
+  margin-right: 10%;
+  line-height: 30px;
 }
 
 .about-img {
-  margin-left: 18%;
+  margin-left: 20%;
   float: left;
 }
 
-.flex-container-header {
-  display: flex;
-  justify-content: center;
-  padding-bottom: 2%;
-  margin-bottom: 5%;
-  border-bottom: dashed;
-  border-color: black;
-  margin-left: 10%;
-  margin-right: 10%;
-}
-
-.flex-container-exercises {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-  margin-left: 20%;
-  margin-right: 20%;
-
-}
-
-.exercise a {
-  padding: 20px;
-  margin: 10px;
-  background-color: black;
-  color: white;
-  font-size: 40px;
-  line-height: 100px;
-   text-decoration: none;
-   border-style: dotted;
-   border-color: black;
-}
-
-.exercise a:hover {
-  background-color: white;
+.about-links a {
+  padding: 10px;
+  text-decoration: none;
+  margin-left: 5%;
   color: black;
 }
 
-footer {
-  text-align: center;
-  padding-top: 2%;
-  margin-top: 5%;
-  margin-bottom: 5%;
-  border-top: dashed;
+.about-links a:hover {
+
+  border-style: dotted;
   border-color: black;
 }
