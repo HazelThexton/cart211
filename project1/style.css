@@ -5,6 +5,18 @@ CSS.
 **********************************************/
 
 /* General styling */
+h1 {
+  padding: 3%;
+  padding-bottom: 0;
+  font-size:40px;
+  color:black;
+}
+
+h2 {
+  font-size:25px;
+  color:black;
+  margin: 5%;
+}
 
 body {
   text-align:center;
@@ -13,7 +25,7 @@ body {
 }
 
 p {
-  font-size:20px;
+  font-size:15px;
   color:black;
   margin: 5%;
 }
@@ -29,6 +41,31 @@ border-style: dotted;
 border-color: black;
 }
 
+.noteBody1, .noteBody2, .noteBody3, .noteBody4 {
+display: none;
+}
+
+.note1, .note2, .note3, .note4 {
+  text-align: left;
+  line-height: 30px;
+  width: 80%;
+  border-style: dotted;
+  margin: 10px;
+}
+
+.note1:hover .noteBody1, .note2:hover .noteBody2, .note3:hover .noteBody3, .note4:hover .noteBody4 {
+  display: block;
+}
+
+.flex-container-notes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-left: 5%;
+  margin-right: 5%;
+
+}
+
 .about {
   text-align: left;
   margin-left: 40%;
@@ -39,19 +76,6 @@ line-height: 30px;
 .about-img {
   margin-left: 18%;
   float: left;
-}
-
-h1 {
-  padding: 3%;
-  padding-bottom: 0;
-  font-size:40px;
-  color:black;
-}
-
-h2 {
-  font-size:25px;
-  color:black;
-  margin: 5%;
 }
 
 .flex-container-header {
@@ -79,7 +103,7 @@ h2 {
   margin: 10px;
   background-color: black;
   color: white;
-  font-size: 50px;
+  font-size: 40px;
   line-height: 100px;
    text-decoration: none;
    border-style: dotted;
