@@ -15,31 +15,23 @@ h1 {
   color:blue;
 }
 
-.flex-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+.paragraphs {
+  width: 800px;
+  margin: auto;
 }
 
-.gallery {
-  border: 1px solid #fff;
-  margin: 10px;
-  width: 180px;
-
-}
-
-.gallery:hover {
-  border: 1px solid #777;
-  background-color: #dbdfff;
-}
-
-div.gallery img {
-  float: center;
-  width: 100%;
-  height: auto;
-}
-
-.desc {
-  padding: 5px;
+.paragraph-1, .paragraph-2, .paragraph-3, .paragraph-4, .paragraph-5, .paragraph-6 {
+  width: 200px;
+  border-style: solid;
+  padding: 10px;
   text-align: center;
+  float: left;
+  margin-left: auto;
+}
+
+.paragraph-1, .paragraph-3, .paragraph-5 {
+  border-color: red;
+}
+.paragraph-2, .paragraph-4, .paragraph-6 {
+border-color: black;
 }
