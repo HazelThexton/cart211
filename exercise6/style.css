@@ -1,0 +1,53 @@
+/*********************************************
+
+CSS.
+
+**********************************************/
+
+/* General syling */
+@font-face{
+  font-family: Aloha;
+  src: url(media/Aloha.ttf);
+
+}
+
+.parallax {
+  background-image: url(media/dice1.jpg);
+  min-height: 500px;
+  background-attachment: fixed;
+}
+
+body{
+  height: 200vh;
+}
+
+.textfeed{
+  height:1000px;
+  background-color: red;
+  font-size: 36;
+}
+
+p {
+  font-size:15px;
+  color:black;
+}
+
+h1 {
+  font-family: Aloha;
+  font-size:40px;
+  color:blue;
+}
+
+#diceImage, #diceNumber {
+  float: left;
+  margin-left: 20%;
+}
+
+#diceImage2, #diceNumber2 {
+  float: right;
+  margin-right: 20%;
+}
+
+#result {
+  margin-top: 300px;
+}
