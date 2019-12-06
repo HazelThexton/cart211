@@ -52,7 +52,7 @@ country[1] = {
 country[2] = {
   x : 0,
   y : 0,
-  width: 0.418,
+  width: 0.415,
   height: 0.99,
   distance: 0,
   visible: false,
