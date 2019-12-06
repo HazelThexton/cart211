@@ -28,7 +28,7 @@ let country = [6];
 country[0] = {
   x : 0.656,
   y : 0.39,
-  width: 0.247,
+  width: 0.248,
   height: 0.517,
   distance: 0,
   visible: false,
@@ -101,10 +101,10 @@ country[5] = {
 //
 // Preloads our sound and images
 function preload() {
-  backgroundImage = loadImage("assets/images/background.png");
-  player.image = loadImage("assets/images/player.png");
+  backgroundImage = loadImage("images/background.png");
+  player.image = loadImage("images/player.png");
   for (let i = 0; i < 6; i++) {
-    country[i].image = loadImage("assets/images/country" + [i] + ".png");
+    country[i].image = loadImage("images/country" + [i] + ".png");
   }
 }
 
