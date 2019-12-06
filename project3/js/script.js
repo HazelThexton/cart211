@@ -26,10 +26,10 @@ let player = {
 let country = [6];
 // country position, size, and image lets
 country[0] = {
-  x : 0.605,
+  x : 0.656,
   y : 0.39,
-  width: 0.3,
-  height: 0.52,
+  width: 0.247,
+  height: 0.517,
   distance: 0,
   visible: false,
   lag: 10,
@@ -62,10 +62,10 @@ country[2] = {
 }
 
 country[3] = {
-  x : 0.401,
+  x : 0.402,
   y : 0.195,
   width: 0.15,
-  height: 0.305,
+  height: 0.303,
   distance: 0,
   visible: false,
   lag: 3.8,
@@ -134,7 +134,7 @@ function draw() {
 
   background(backgroundImage);
 
-  handleInput();
+  playerRotation();
 
   movePlayer();
 
@@ -161,23 +161,11 @@ function textFormat() {
   strokeWeight(4);
 }
 
-// Core game functions
-
-// handleInput()
-//
-// Checks arrow keys and adjusts player velocity accordingly
-function handleInput() {
-  // Rotates based on player movement
-  playerRotation();
-
-}
-
 // playerRotation()
 //
-// Check for rotation
+// Rotate the airplane to the mouse position
 function playerRotation() {
   player.rotate = atan2(mouseY - player.y, mouseX - player.x) + 90;
-  //player.rotate = 0;
 }
 
 // movePlayer()
