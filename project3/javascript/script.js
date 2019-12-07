@@ -206,21 +206,8 @@ function movePlayer() {
 //
 // Check if the player overlaps the country and updates health of both
 function checkOverlap() {
-  let ctx = canvas.getContext('2d');
-  let imgData = ctx.getImageData(player.x, player.y,1,1);
 
-  // background RGBA is 0, 44, 25, 255, so if the data matches this, the player is not overlapping a country.
-  // but which one?
-  if (imgData.data[0] <= 50 && imgData.data[1] <= 50 && imgData.data[2] <= 50){
-    console.log("not on land");
-    for (let i = 0; i < 6; i++) {
-      country[i].visible = false;
-    }
-    lag = 2.5;
-  }
 
-  else {
-    console.log("on land");
     for (let i = 0; i < 6; i++) {
       // Check if it's an overlap
       if(((width*country[i].collisionX < player.x + player.size) && (width*country[i].collisionX + width*country[i].collisionWidth > player.x) &&
@@ -238,7 +225,6 @@ function checkOverlap() {
       }
     }
   }
-}
 
 // drawcountry()
 //
