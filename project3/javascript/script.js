@@ -155,9 +155,9 @@ function draw() {
 
   playerRotation();
 
-  movePlayer();
-
   checkOverlap();
+
+  movePlayer();
 
   for (let i = 0; i < 6; i++) {
     if (country[i].visible){
@@ -197,8 +197,10 @@ function movePlayer() {
   let xDistance = mouseX - player.x;
   let yDistance = mouseY - player.y;
   // Add 1/50th of the x and y distance to the peanut image's current (x,y) location
-  player.x = player.x + xDistance/lag;
-  player.y = player.y + yDistance/lag;
+  player.x = player.x + xDistance/(lag*4);
+  player.y = player.y + yDistance/(lag*4);
+
+  console.log(lag);
 
 }
 
@@ -207,6 +209,9 @@ function movePlayer() {
 // Check if the player overlaps the country and updates health of both
 function checkOverlap() {
 
+for (let i = 0; i < 6; i++) {
+  country[i].visible = false;
+}
 
     for (let i = 0; i < 6; i++) {
       // Check if it's an overlap
@@ -215,15 +220,9 @@ function checkOverlap() {
         country[i].visible = true;
         lag = country[i].lag;
       }
-      //if (d < player.size + width*country[i].collisionWidth && d < player.size + height*country[i].collisionHeight) {
-      //
-      //    }
 
-      else {
-        country[i].visible = false;
-        lag = 2.5;
-      }
     }
+
   }
 
 // drawcountry()
