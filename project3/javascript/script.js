@@ -33,6 +33,10 @@ country[0] = {
   distance: 0,
   visible: false,
   lag: 10,
+  collisionX : 0.656,
+  collisionY : 0.45,
+  collisionWidth: 0.248,
+  collisionHeight: 0.517,
   // country image
   image : 0
 }
@@ -45,6 +49,10 @@ country[1] = {
   distance: 0,
   visible: false,
   lag: 10.6,
+  collisionX : 0.562,
+  collisionY : 0.07,
+  collisionWidth: 0.465,
+  collisionHeight: 0.35,
   // country image
   image : 0
 }
@@ -57,6 +65,10 @@ country[2] = {
   distance: 0,
   visible: false,
   lag: 3.8,
+  collisionX : 0.402,
+  collisionY : 0.195,
+  collisionWidth: 0.15,
+  collisionHeight: 0.303,
   // country image
   image : 0
 }
@@ -69,6 +81,10 @@ country[3] = {
   distance: 0,
   visible: false,
   lag: 12.4,
+  collisionX : 0.442,
+  collisionY : 0.49,
+  collisionWidth: 0.225,
+  collisionHeight: 0.138,
   // country image
   image : 0
 
@@ -82,6 +98,10 @@ country[4] = {
   distance: 0,
   visible: false,
   lag: 9.4,
+  collisionX : 0.42,
+  collisionY : 0.63,
+  collisionWidth: 0.13,
+  collisionHeight: 0.3,
   // country image
   image : 0
 }
@@ -94,6 +114,10 @@ country[5] = {
   distance: 0,
   visible: false,
   lag: 7,
+  collisionX : 0,
+  collisionY : 0,
+  collisionWidth: 0.4,
+  collisionHeight: 0.99,
   // country image
   image : 0
 }
@@ -193,62 +217,32 @@ function checkOverlap() {
 
   // background RGBA is 0, 44, 25, 255, so if the data matches this, the player is not overlapping a country.
   // but which one?
-   if (imgData.data[0] === 0 && imgData.data[1] === 51 && imgData.data[2] === 102){
-    for (let i = 0; i < 6; i++) {
-      country[i].visible = false;
-    }
-    country[0].visible = true;
-    lag = country[0].lag;
-  }
-
-  else if (imgData.data[0] === 0 && imgData.data[1] === 51 && imgData.data[2] === 153){
-    for (let i = 0; i < 6; i++) {
-      country[i].visible = false;
-    }
-    country[1].visible = true;
-    lag = country[1].lag;
-  }
-
-  else if (imgData.data[0] === 0 && imgData.data[1] === 102 && imgData.data[2] === 153){
-    for (let i = 0; i < 6; i++) {
-      country[i].visible = false;
-    }
-    country[2].visible = true;
-    lag = country[2].lag;
-  }
-
-  else if (imgData.data[0] === 0 && imgData.data[1] === 51 && imgData.data[2] === 204){
-    for (let i = 0; i < 6; i++) {
-      country[i].visible = false;
-    }
-    country[3].visible = true;
-    lag = country[3].lag;
-  }
-
-  else if (imgData.data[0] === 0 && imgData.data[1] === 102 && imgData.data[2] === 204){
-    for (let i = 0; i < 6; i++) {
-      country[i].visible = false;
-    }
-    country[4].visible = true;
-    lag = country[4].lag;
-  }
-
-  else if (imgData.data[0] === 0 && imgData.data[1] === 102 && imgData.data[2] === 255){
-    for (let i = 0; i < 6; i++) {
-      country[i].visible = false;
-    }
-    country[5].visible = true;
-    lag = country[5].lag;
-  }
-
-  else {
+  if (imgData.data[0] === 0){
     for (let i = 0; i < 6; i++) {
       country[i].visible = false;
     }
     lag = 2.5;
   }
 
-console.log(imgData.data[0]);
+  else {
+    for (let i = 0; i < 6; i++) {
+      // Get distance of player to prey
+      let d = dist(player.x,player.y,width*country[i].collisionX,height*country[i].collisionY);
+      // Check if it's an overlap
+      if(((width*country[i].collisionX < player.x + player.size) && (width*country[i].collisionX + width*country[i].collisionWidth > player.x) &&
+      (height*country[i].collisionY + height*country[i].collisionHeight> player.y) && (height*country[i].collisionY < player.y + player.size))){
+        country[i].visible = true;
+        lag = country[i].lag;
+      }
+      //if (d < player.size + width*country[i].collisionWidth && d < player.size + height*country[i].collisionHeight) {
+      //
+      //    }
+
+      else {
+        country[i].visible = false;
+      }
+    }
+  }
 }
 
 // drawcountry()
