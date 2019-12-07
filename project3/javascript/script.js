@@ -38,42 +38,6 @@ country[0] = {
 }
 
 country[1] = {
-  x : 0.42,
-  y : 0.5,
-  width: 0.19,
-  height: 0.38,
-  distance: 0,
-  visible: false,
-  lag: 9.4,
-  // country image
-  image : 0
-}
-
-country[2] = {
-  x : 0,
-  y : 0,
-  width: 0.415,
-  height: 0.99,
-  distance: 0,
-  visible: false,
-  lag: 7,
-  // country image
-  image : 0
-}
-
-country[3] = {
-  x : 0.402,
-  y : 0.195,
-  width: 0.15,
-  height: 0.303,
-  distance: 0,
-  visible: false,
-  lag: 3.8,
-  // country image
-  image : 0
-}
-
-country[4] = {
   x : 0.532,
   y : 0.07,
   width: 0.469,
@@ -85,7 +49,19 @@ country[4] = {
   image : 0
 }
 
-country[5] = {
+country[2] = {
+  x : 0.402,
+  y : 0.195,
+  width: 0.15,
+  height: 0.303,
+  distance: 0,
+  visible: false,
+  lag: 3.8,
+  // country image
+  image : 0
+}
+
+country[3] = {
   x : 0.442,
   y : 0.49,
   width: 0.225,
@@ -93,6 +69,31 @@ country[5] = {
   distance: 0,
   visible: false,
   lag: 12.4,
+  // country image
+  image : 0
+
+}
+
+country[4] = {
+  x : 0.42,
+  y : 0.5,
+  width: 0.19,
+  height: 0.38,
+  distance: 0,
+  visible: false,
+  lag: 9.4,
+  // country image
+  image : 0
+}
+
+country[5] = {
+  x : 0,
+  y : 0,
+  width: 0.415,
+  height: 0.99,
+  distance: 0,
+  visible: false,
+  lag: 7,
   // country image
   image : 0
 }
@@ -199,7 +200,7 @@ function checkOverlap() {
     lag = 2.5;
   }
 
-  else if (imgData.data[0] <= 5){
+  else if (imgData.data[0] <= 10){
     for (let i = 0; i < 6; i++) {
       country[i].visible = false;
     }
@@ -207,7 +208,7 @@ function checkOverlap() {
     lag = country[0].lag;
   }
 
-  else if (imgData.data[0] <= 10){
+  else if (imgData.data[0] <= 20){
     for (let i = 0; i < 6; i++) {
       country[i].visible = false;
     }
@@ -215,7 +216,7 @@ function checkOverlap() {
     lag = country[1].lag;
   }
 
-  else if (imgData.data[0] <= 15){
+  else if (imgData.data[0] <= 30){
     for (let i = 0; i < 6; i++) {
       country[i].visible = false;
     }
@@ -223,7 +224,7 @@ function checkOverlap() {
     lag = country[2].lag;
   }
 
-  else if (imgData.data[0] <= 20){
+  else if (imgData.data[0] <= 40){
     for (let i = 0; i < 6; i++) {
       country[i].visible = false;
     }
@@ -231,7 +232,7 @@ function checkOverlap() {
     lag = country[3].lag;
   }
 
-  else if (imgData.data[0] <= 25){
+  else if (imgData.data[0] <= 50){
     for (let i = 0; i < 6; i++) {
       country[i].visible = false;
     }
@@ -239,7 +240,7 @@ function checkOverlap() {
     lag = country[4].lag;
   }
 
-  else if (imgData.data[0] <= 30){
+  else if (imgData.data[0] <= 60){
     for (let i = 0; i < 6; i++) {
       country[i].visible = false;
     }
