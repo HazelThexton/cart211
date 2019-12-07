@@ -6,8 +6,6 @@ Hazel Thexton, Janet Sun, Joseph Power & Amanda Clement
 
 
 ******************************************************/
-// Tracks the advancement of time
-let time = 0;
 
 let lag = 2.5;
 
@@ -209,21 +207,21 @@ function movePlayer() {
 // Check if the player overlaps the country and updates health of both
 function checkOverlap() {
 
-for (let i = 0; i < 6; i++) {
-  country[i].visible = false;
-}
+  for (let i = 0; i < 6; i++) {
+    country[i].visible = false;
+  }
 
-    for (let i = 0; i < 6; i++) {
-      // Check if it's an overlap
-      if(((width*country[i].collisionX < player.x + player.size) && (width*country[i].collisionX + width*country[i].collisionWidth > player.x) &&
-      (height*country[i].collisionY + height*country[i].collisionHeight> player.y) && (height*country[i].collisionY < player.y + player.size))){
-        country[i].visible = true;
-        lag = country[i].lag;
-      }
-
+  for (let i = 0; i < 6; i++) {
+    // Check if it's an overlap
+    if(((width*country[i].collisionX < player.x + player.size) && (width*country[i].collisionX + width*country[i].collisionWidth > player.x) &&
+    (height*country[i].collisionY + height*country[i].collisionHeight> player.y) && (height*country[i].collisionY < player.y + player.size))){
+      country[i].visible = true;
+      lag = country[i].lag;
     }
 
   }
+
+}
 
 // drawcountry()
 //
