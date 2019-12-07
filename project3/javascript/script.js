@@ -30,7 +30,6 @@ country[0] = {
   y : 0.39,
   width: 0.248,
   height: 0.517,
-  distance: 0,
   visible: false,
   lag: 10,
   collisionX : 0.656,
@@ -46,7 +45,6 @@ country[1] = {
   y : 0.07,
   width: 0.469,
   height: 0.45,
-  distance: 0,
   visible: false,
   lag: 10.6,
   collisionX : 0.562,
@@ -62,7 +60,6 @@ country[2] = {
   y : 0.195,
   width: 0.15,
   height: 0.303,
-  distance: 0,
   visible: false,
   lag: 3.8,
   collisionX : 0.402,
@@ -78,7 +75,6 @@ country[3] = {
   y : 0.49,
   width: 0.225,
   height: 0.138,
-  distance: 0,
   visible: false,
   lag: 12.4,
   collisionX : 0.442,
@@ -95,7 +91,6 @@ country[4] = {
   y : 0.5,
   width: 0.19,
   height: 0.38,
-  distance: 0,
   visible: false,
   lag: 9.4,
   collisionX : 0.42,
@@ -111,7 +106,6 @@ country[5] = {
   y : 0,
   width: 0.415,
   height: 0.99,
-  distance: 0,
   visible: false,
   lag: 7,
   collisionX : 0,
@@ -217,7 +211,8 @@ function checkOverlap() {
 
   // background RGBA is 0, 44, 25, 255, so if the data matches this, the player is not overlapping a country.
   // but which one?
-  if (imgData.data[0] === 0){
+  if (imgData.data[0] <= 50 && imgData.data[1] <= 50 && imgData.data[2] <= 50){
+    console.log("not on land");
     for (let i = 0; i < 6; i++) {
       country[i].visible = false;
     }
@@ -225,9 +220,8 @@ function checkOverlap() {
   }
 
   else {
+    console.log("on land");
     for (let i = 0; i < 6; i++) {
-      // Get distance of player to prey
-      let d = dist(player.x,player.y,width*country[i].collisionX,height*country[i].collisionY);
       // Check if it's an overlap
       if(((width*country[i].collisionX < player.x + player.size) && (width*country[i].collisionX + width*country[i].collisionWidth > player.x) &&
       (height*country[i].collisionY + height*country[i].collisionHeight> player.y) && (height*country[i].collisionY < player.y + player.size))){
@@ -240,6 +234,7 @@ function checkOverlap() {
 
       else {
         country[i].visible = false;
+        lag = 2.5;
       }
     }
   }
