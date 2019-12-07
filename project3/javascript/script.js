@@ -181,7 +181,6 @@ function movePlayer() {
   player.x = player.x + xDistance/lag;
   player.y = player.y + yDistance/lag;
 
-  console.log(lag);
 }
 
 // checkOverlap()
@@ -193,7 +192,14 @@ function checkOverlap() {
 
   // background RGBA is 0, 44, 25, 255, so if the data matches this, the player is not overlapping a country.
   // but which one?
-  if (imgData.data[0] === 10) {
+  if (imgData.data[0] === 0) {
+    for (let i = 0; i < 6; i++) {
+      country[i].visible = false;
+    }
+    lag = 2.5;
+  }
+
+  else if (imgData.data[0] <= 5){
     for (let i = 0; i < 6; i++) {
       country[i].visible = false;
     }
@@ -201,7 +207,7 @@ function checkOverlap() {
     lag = country[0].lag;
   }
 
-  else if (imgData.data[0] === 11){
+  else if (imgData.data[0] <= 10){
     for (let i = 0; i < 6; i++) {
       country[i].visible = false;
     }
@@ -209,7 +215,7 @@ function checkOverlap() {
     lag = country[1].lag;
   }
 
-  else if (imgData.data[0] === 12){
+  else if (imgData.data[0] <= 15){
     for (let i = 0; i < 6; i++) {
       country[i].visible = false;
     }
@@ -217,7 +223,7 @@ function checkOverlap() {
     lag = country[2].lag;
   }
 
-  else if (imgData.data[0] === 13){
+  else if (imgData.data[0] <= 20){
     for (let i = 0; i < 6; i++) {
       country[i].visible = false;
     }
@@ -225,7 +231,7 @@ function checkOverlap() {
     lag = country[3].lag;
   }
 
-  else if (imgData.data[0] === 14){
+  else if (imgData.data[0] <= 25){
     for (let i = 0; i < 6; i++) {
       country[i].visible = false;
     }
@@ -233,7 +239,7 @@ function checkOverlap() {
     lag = country[4].lag;
   }
 
-  else if (imgData.data[0] === 15){
+  else if (imgData.data[0] <= 30){
     for (let i = 0; i < 6; i++) {
       country[i].visible = false;
     }
@@ -248,6 +254,7 @@ function checkOverlap() {
     lag = 2.5;
   }
 
+console.log(imgData.data[0]);
 }
 
 // drawcountry()
